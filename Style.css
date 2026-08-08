@@ -1,0 +1,313 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: #eeeeee;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background: #090909;
+
+    border-bottom: 2px solid #d90429;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #e5092f;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e5092f;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 10%;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(0, 47, 108, 0.5),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #080808,
+            #160006
+        );
+}
+
+.hero-text {
+    max-width: 700px;
+
+    animation: aparecer 1s ease;
+}
+
+.subtitulo {
+    color: #1e90ff;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: clamp(40px, 6vw, 80px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.hero h2 span {
+    color: #e5092f;
+}
+
+.hero p {
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: #cccccc;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #e5092f;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1e90ff;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.sobre,
+.curiosidades {
+    padding: 80px 10%;
+
+    text-align: center;
+}
+
+.sobre {
+    background: #101010;
+}
+
+.sobre h2,
+.curiosidades h2 {
+    font-size: 36px;
+
+    margin-bottom: 30px;
+
+    color: #e5092f;
+}
+
+.sobre p {
+    max-width: 800px;
+
+    margin: 15px auto;
+
+    line-height: 1.7;
+
+    color: #cccccc;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.card {
+    padding: 30px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #e5092f;
+
+    box-shadow:
+        0 10px 30px
+        rgba(229, 9, 47, 0.15);
+}
+
+.card h3 {
+    color: #1e90ff;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #bbbbbb;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #050505;
+
+    border-top: 1px solid #222;
+
+    color: #888;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero {
+        text-align: center;
+
+        padding: 60px 6%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
